@@ -90,6 +90,23 @@
         </div>
       </div>
       <!-- /LOST MODE banner -->
+
+      <!-- Pet switcher (chips) -->
+      <div class="lost-mode-hide flex items-center gap-2 mb-4 overflow-x-auto pb-1">
+        <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mr-1 shrink-0 hidden sm:block">Twoje pupile:</p>
+        <button data-pet-chip="burek" onclick="setActivePet('burek')" class="pet-chip shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-orange-300 hover:shadow transition text-sm font-semibold">
+          <span class="text-base">🐕</span>Burek
+        </button>
+        <button data-pet-chip="mruczek" onclick="setActivePet('mruczek')" class="pet-chip shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-violet-300 hover:shadow transition text-sm font-semibold">
+          <span class="text-base">🐈</span>Mruczek
+        </button>
+        <button data-pet-chip="paczek" onclick="setActivePet('paczek')" class="pet-chip shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-emerald-300 hover:shadow transition text-sm font-semibold">
+          <span class="text-base">🦜</span>Pączek
+        </button>
+      </div>
+
+      <!-- ============ KARTA: BUREK ============ -->
+      <div data-pet-card="burek">
       <div class="lost-mode-hide bg-white rounded-3xl shadow-2xl shadow-orange-200/50 overflow-hidden ring-1 ring-orange-100">
 
         <!-- Header -->
@@ -295,32 +312,33 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-violet-600"><path d="m18 2 4 4"></path><path d="m17 7 3-3"></path><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"></path><path d="m9 11 4 4"></path><path d="m5 19-3 3"></path><path d="m14 4 6 6"></path></svg>
               </div>
               <h2 class="text-xl font-semibold text-slate-800 font-display">Szczepienia i profilaktyka</h2>
+              <span class="ml-auto text-[11px] text-slate-400">klik = szczegóły</span>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4 shadow-sm">
+              <button onclick="showVaccine('wscieklizna-burek')" class="text-left relative bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
                 <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
                 <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Wścieklizna</p>
                 <p class="text-slate-800 font-bold text-lg">10.04.2026</p>
                 <p class="text-xs text-slate-500 mt-1">Następna: 10.04.2027</p>
-              </div>
-              <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4 shadow-sm">
+              </button>
+              <button onclick="showVaccine('dhppi-burek')" class="text-left relative bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
                 <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
                 <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">DHPPi + L4</p>
                 <p class="text-slate-800 font-bold text-lg">10.04.2026</p>
                 <p class="text-xs text-slate-500 mt-1">Następna: 10.04.2027</p>
-              </div>
-              <div class="relative bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 shadow-sm">
+              </button>
+              <button onclick="showVaccine('odrobaczanie-burek')" class="text-left relative bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
                 <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-amber-500 ring-4 ring-amber-100"></div>
                 <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">Odrobaczanie</p>
                 <p class="text-slate-800 font-bold text-lg">15.03.2026</p>
                 <p class="text-xs text-slate-500 mt-1">Następne: 15.06.2026</p>
-              </div>
-              <div class="relative bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 shadow-sm">
+              </button>
+              <button onclick="showVaccine('pchly-burek')" class="text-left relative bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
                 <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-amber-500 ring-4 ring-amber-100"></div>
                 <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">Pchły / kleszcze</p>
                 <p class="text-slate-800 font-bold text-lg">01.04.2026</p>
                 <p class="text-xs text-slate-500 mt-1">Następne: 01.05.2026</p>
-              </div>
+              </button>
             </div>
           </section>
 
@@ -500,88 +518,106 @@
                 Odblokowano. Sesja aktywna 15 minut.
               </div>
 
-              <!-- Historia wizyt -->
+              <!-- Historia wizyt — kompaktowa, 2 kolumny -->
               <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
-                <div class="px-5 py-3 bg-slate-50 border-b border-slate-200">
+                <div class="px-5 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
                   <h3 class="font-bold text-slate-800 text-sm">Historia wizyt (12)</h3>
+                  <span class="text-[10px] text-slate-400">data · placówka</span>
                 </div>
-                <div class="divide-y divide-slate-100">
-                  <div class="p-4 flex gap-3">
-                    <div class="shrink-0 w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">KWI</span><span class="text-sm font-bold leading-none">18</span></div>
+                <div class="grid sm:grid-cols-2 divide-y sm:divide-y-0 divide-slate-100">
+                  <div class="p-3 flex gap-2.5 sm:border-r border-slate-100">
+                    <div class="shrink-0 w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex flex-col items-center justify-center"><span class="text-[8px] font-bold leading-tight">KWI</span><span class="text-xs font-bold leading-tight">18.04</span></div>
                     <div class="flex-1 min-w-0">
-                      <p class="font-semibold text-slate-800 text-sm">Szczepienie DHPPi+L4</p>
-                      <p class="text-xs text-slate-500">dr Tomasz Nowak • Vetlab Warszawa</p>
+                      <p class="font-semibold text-slate-800 text-sm leading-tight">Szczepienie DHPPi+L4</p>
+                      <p class="text-[11px] text-slate-500 leading-snug mt-0.5">Vetlab · ul. Wiejska 12, Warszawa</p>
                     </div>
                   </div>
-                  <div class="p-4 flex gap-3">
-                    <div class="shrink-0 w-11 h-11 rounded-xl bg-sky-100 text-sky-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">MAR</span><span class="text-sm font-bold leading-none">12</span></div>
+                  <div class="p-3 flex gap-2.5">
+                    <div class="shrink-0 w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex flex-col items-center justify-center"><span class="text-[8px] font-bold leading-tight">KWI</span><span class="text-xs font-bold leading-tight">10.04</span></div>
                     <div class="flex-1 min-w-0">
-                      <p class="font-semibold text-slate-800 text-sm">Kontrola tarczycy</p>
-                      <p class="text-xs text-slate-500">dr Tomasz Nowak • Wyniki: TSH w normie</p>
+                      <p class="font-semibold text-slate-800 text-sm leading-tight">Wścieklizna</p>
+                      <p class="text-[11px] text-slate-500 leading-snug mt-0.5">Vetlab · ul. Wiejska 12, Warszawa</p>
                     </div>
                   </div>
-                  <div class="p-4 flex gap-3">
-                    <div class="shrink-0 w-11 h-11 rounded-xl bg-amber-100 text-amber-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">LUT</span><span class="text-sm font-bold leading-none">03</span></div>
+                  <div class="p-3 flex gap-2.5 sm:border-r border-t sm:border-t-0 border-slate-100">
+                    <div class="shrink-0 w-10 h-10 rounded-lg bg-sky-100 text-sky-700 flex flex-col items-center justify-center"><span class="text-[8px] font-bold leading-tight">MAR</span><span class="text-xs font-bold leading-tight">12.03</span></div>
                     <div class="flex-1 min-w-0">
-                      <p class="font-semibold text-slate-800 text-sm">Zapalenie ucha — leczenie</p>
-                      <p class="text-xs text-slate-500">Otibiovin krople, kontrola za 14 dni</p>
+                      <p class="font-semibold text-slate-800 text-sm leading-tight">Kontrola tarczycy</p>
+                      <p class="text-[11px] text-slate-500 leading-snug mt-0.5">Vetlab · ul. Wiejska 12, Warszawa</p>
                     </div>
                   </div>
-                  <div class="p-4 flex gap-3">
-                    <div class="shrink-0 w-11 h-11 rounded-xl bg-rose-100 text-rose-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">STY</span><span class="text-sm font-bold leading-none">22</span></div>
+                  <div class="p-3 flex gap-2.5 border-t sm:border-t-0 border-slate-100">
+                    <div class="shrink-0 w-10 h-10 rounded-lg bg-violet-100 text-violet-700 flex flex-col items-center justify-center"><span class="text-[8px] font-bold leading-tight">MAR</span><span class="text-xs font-bold leading-tight">15.03</span></div>
                     <div class="flex-1 min-w-0">
-                      <p class="font-semibold text-slate-800 text-sm">RTG stawów biodrowych</p>
-                      <p class="text-xs text-slate-500">Kontrola dysplazji — bez progresji</p>
+                      <p class="font-semibold text-slate-800 text-sm leading-tight">Odrobaczanie</p>
+                      <p class="text-[11px] text-slate-500 leading-snug mt-0.5">Vetlab · ul. Wiejska 12, Warszawa</p>
+                    </div>
+                  </div>
+                  <div class="p-3 flex gap-2.5 sm:border-r border-t border-slate-100">
+                    <div class="shrink-0 w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex flex-col items-center justify-center"><span class="text-[8px] font-bold leading-tight">LUT</span><span class="text-xs font-bold leading-tight">03.02</span></div>
+                    <div class="flex-1 min-w-0">
+                      <p class="font-semibold text-slate-800 text-sm leading-tight">Zapalenie ucha — Otibiovin</p>
+                      <p class="text-[11px] text-slate-500 leading-snug mt-0.5">Vetlab · ul. Wiejska 12, Warszawa</p>
+                    </div>
+                  </div>
+                  <div class="p-3 flex gap-2.5 border-t border-slate-100">
+                    <div class="shrink-0 w-10 h-10 rounded-lg bg-rose-100 text-rose-700 flex flex-col items-center justify-center"><span class="text-[8px] font-bold leading-tight">STY</span><span class="text-xs font-bold leading-tight">22.01</span></div>
+                    <div class="flex-1 min-w-0">
+                      <p class="font-semibold text-slate-800 text-sm leading-tight">RTG stawów biodrowych</p>
+                      <p class="text-[11px] text-slate-500 leading-snug mt-0.5">Vetlab · ul. Wiejska 12, Warszawa</p>
                     </div>
                   </div>
                 </div>
-                <div class="px-5 py-2.5 bg-slate-50 text-center text-xs text-slate-500 border-t border-slate-200">+ 8 starszych wizyt</div>
+                <button onclick="setTab('visits'); showView('panel')" class="w-full px-5 py-2.5 bg-slate-50 hover:bg-slate-100 text-center text-xs font-bold text-orange-600 border-t border-slate-200 transition">+ 6 starszych wizyt — pełna lista w panelu →</button>
               </div>
 
-              <!-- Dokumenty -->
+              <!-- Dokumenty - kompaktowy grid + linki PDF -->
               <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
                 <div class="px-5 py-3 bg-slate-50 border-b border-slate-200">
-                  <h3 class="font-bold text-slate-800 text-sm">Dokumenty (7)</h3>
+                  <h3 class="font-bold text-slate-800 text-sm">Dokumenty (4)</h3>
                 </div>
                 <div class="grid sm:grid-cols-2 gap-2 p-3">
-                  <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer">
-                    <div class="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <a href="docs/Vetlink_morfologia_Burek.pdf" target="_blank" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition group">
+                    <div class="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0 group-hover:bg-violet-200 transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                     </div>
                     <div class="min-w-0 flex-1">
                       <p class="text-sm font-semibold text-slate-800 truncate">Wyniki morfologii</p>
-                      <p class="text-xs text-slate-500">22 kwi 2026 • PDF, 1,2 MB</p>
+                      <p class="text-xs text-slate-500">22 kwi 2026 · PDF</p>
                     </div>
-                  </div>
-                  <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer">
-                    <div class="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-slate-400 shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  </a>
+                  <a href="docs/Vetlink_paszport_Burek.pdf" target="_blank" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition group">
+                    <div class="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0 group-hover:bg-violet-200 transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                     </div>
                     <div class="min-w-0 flex-1">
                       <p class="text-sm font-semibold text-slate-800 truncate">Paszport zwierzęcia</p>
-                      <p class="text-xs text-slate-500">15 lip 2018 • PDF, 0,8 MB</p>
+                      <p class="text-xs text-slate-500">15 lip 2018 · PDF</p>
                     </div>
-                  </div>
-                  <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer">
-                    <div class="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                    </div>
-                    <div class="min-w-0 flex-1">
-                      <p class="text-sm font-semibold text-slate-800 truncate">RTG stawy biodrowe</p>
-                      <p class="text-xs text-slate-500">22 sty 2026 • JPG, 3,4 MB</p>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer">
-                    <div class="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-slate-400 shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  </a>
+                  <a href="docs/Vetlink_RTG_Burek.pdf" target="_blank" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition group">
+                    <div class="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0 group-hover:bg-violet-200 transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                     </div>
                     <div class="min-w-0 flex-1">
-                      <p class="text-sm font-semibold text-slate-800 truncate">Polisa ubezpieczeniowa</p>
-                      <p class="text-xs text-slate-500">10 sty 2026 • PDF, 0,5 MB</p>
+                      <p class="text-sm font-semibold text-slate-800 truncate">RTG stawy biodrowe (opis)</p>
+                      <p class="text-xs text-slate-500">22 sty 2026 · PDF</p>
                     </div>
-                  </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-slate-400 shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  </a>
+                  <a href="docs/Vetlink_polisa_Burek.pdf" target="_blank" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 cursor-pointer transition group">
+                    <div class="w-10 h-10 rounded-lg bg-violet-100 text-violet-600 flex items-center justify-center shrink-0 group-hover:bg-violet-200 transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <p class="text-sm font-semibold text-slate-800 truncate">Polisa PZU Pet</p>
+                      <p class="text-xs text-slate-500">10 sty 2026 · PDF</p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-slate-400 shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  </a>
                 </div>
-                <div class="px-5 py-2.5 bg-slate-50 text-center text-xs text-slate-500 border-t border-slate-200">+ 3 starsze dokumenty</div>
               </div>
             </div>
           </section>
@@ -589,14 +625,383 @@
         </div>
 
         <!-- Footer -->
-        <div class="bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50 px-8 py-6 text-center text-sm text-slate-600 border-t border-orange-100">
+        <div class="bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50 px-8 py-6 text-center text-sm text-slate-600 border-t border-orange-100 space-y-1">
           <p class="flex items-center justify-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-500"><circle cx="11" cy="4" r="2"></circle><circle cx="18" cy="8" r="2"></circle><circle cx="20" cy="16" r="2"></circle><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"></path><circle cx="4" cy="8" r="2"></circle></svg>
             Ostatnia aktualizacja: 27 kwietnia 2026
           </p>
+          <p class="text-xs text-slate-500">Vetlink · Copyright © Cognify 2026</p>
         </div>
 
       </div>
+      </div>
+      <!-- /KARTA BUREK -->
+
+      <!-- ============ KARTA: MRUCZEK (kot brytyjski) ============ -->
+      <div data-pet-card="mruczek" class="hidden">
+        <div class="lost-mode-hide bg-white rounded-3xl shadow-2xl shadow-violet-200/50 overflow-hidden ring-1 ring-violet-100">
+          <div class="relative bg-gradient-to-br from-violet-400 via-indigo-500 to-blue-500 px-8 py-12 text-white overflow-hidden header-shine">
+            <div class="absolute inset-0 paw-header opacity-100"></div>
+            <div class="relative flex items-center gap-5">
+              <div class="w-24 h-24 bg-white/25 backdrop-blur-md rounded-3xl flex items-center justify-center shadow-lg ring-2 ring-white/40 rotate-[-6deg]">
+                <span class="text-5xl">🐈</span>
+              </div>
+              <div>
+                <h1 class="font-display text-5xl font-bold drop-shadow-sm">Mruczek</h1>
+                <p class="text-white/90 text-lg font-medium mt-1 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                  Karta Zwierzaka
+                </p>
+              </div>
+            </div>
+            <div class="relative mt-6 flex flex-wrap items-center gap-2 sm:absolute sm:top-6 sm:right-6 sm:mt-0 sm:flex-col sm:items-end">
+              <div class="bg-white/20 backdrop-blur-md rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wide ring-1 ring-white/30">ID: 616 093 900 067 891</div>
+              <button onclick="showView('panel')" class="group bg-white text-violet-600 hover:bg-violet-50 active:scale-95 transition-all rounded-full pl-3 pr-2 py-1.5 sm:pl-4 sm:pr-3 sm:py-2 text-sm font-bold shadow-lg shadow-violet-900/20 ring-2 ring-white/60 inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                System
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-8 space-y-8">
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-violet-100 flex items-center justify-center">
+                  <span class="text-lg">🐈</span>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Dane Zwierzaka</h2>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gradient-to-br from-violet-50 to-indigo-50 rounded-2xl p-6 border border-violet-100">
+                <div><p class="text-xs font-semibold text-violet-700 uppercase tracking-wide mb-1">Gatunek</p><p class="text-slate-800 font-medium">Kot</p></div>
+                <div><p class="text-xs font-semibold text-violet-700 uppercase tracking-wide mb-1">Rasa</p><p class="text-slate-800 font-medium">Kot brytyjski krótkowłosy</p></div>
+                <div><p class="text-xs font-semibold text-violet-700 uppercase tracking-wide mb-1">Data urodzenia</p><p class="text-slate-800 font-medium">8 marca 2022</p></div>
+                <div><p class="text-xs font-semibold text-violet-700 uppercase tracking-wide mb-1">Wiek</p><p class="text-slate-800 font-medium">4 lata</p></div>
+                <div><p class="text-xs font-semibold text-violet-700 uppercase tracking-wide mb-1">Płeć</p><p class="text-slate-800 font-medium">Samica (sterylizowana)</p></div>
+                <div><p class="text-xs font-semibold text-violet-700 uppercase tracking-wide mb-1">Maść</p><p class="text-slate-800 font-medium">Niebieska (popielata)</p></div>
+                <div class="md:col-span-2 pt-3 border-t border-violet-200">
+                  <p class="text-xs font-semibold text-violet-700 uppercase tracking-wide mb-1">Mikroczip</p>
+                  <p class="text-slate-800 font-mono font-medium tracking-wider">616 093 900 067 891</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Parametry zdrowotne</h2>
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-gradient-to-br from-rose-100 to-rose-200/50 text-rose-700 rounded-2xl p-5 text-center shadow-sm">
+                  <div class="flex justify-center mb-2"><div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></div></div>
+                  <p class="text-xs font-semibold mb-1 uppercase tracking-wide opacity-80">Grupa krwi</p>
+                  <p class="text-xl font-bold">A</p>
+                </div>
+                <div class="bg-gradient-to-br from-sky-100 to-sky-200/50 text-sky-700 rounded-2xl p-5 text-center shadow-sm">
+                  <div class="flex justify-center mb-2"><div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M7 21V8"/><path d="M17 21V4"/></svg></div></div>
+                  <p class="text-xs font-semibold mb-1 uppercase tracking-wide opacity-80">Wzrost w kłębie</p>
+                  <p class="text-xl font-bold">26 cm</p>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-100 to-emerald-200/50 text-emerald-700 rounded-2xl p-5 text-center shadow-sm">
+                  <div class="flex justify-center mb-2"><div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div></div>
+                  <p class="text-xs font-semibold mb-1 uppercase tracking-wide opacity-80">Waga</p>
+                  <p class="text-xl font-bold">5,2 kg</p>
+                </div>
+                <div class="bg-gradient-to-br from-violet-100 to-violet-200/50 text-violet-700 rounded-2xl p-5 text-center shadow-sm">
+                  <div class="flex justify-center mb-2"><div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+                  <p class="text-xs font-semibold mb-1 uppercase tracking-wide opacity-80">Kondycja BCS</p>
+                  <p class="text-xl font-bold">5/9</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-rose-600"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Alergie</h2>
+              </div>
+              <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 rounded-r-2xl p-4 shadow-sm">
+                <div class="flex justify-between items-start gap-3">
+                  <div>
+                    <h3 class="font-semibold text-slate-800">Kurczak</h3>
+                    <p class="text-sm text-slate-600 mt-1">Świąd skóry, drapanie, zaczerwienienie uszu</p>
+                  </div>
+                  <span class="shrink-0 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-white shadow-sm">Średnia</span>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-sky-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sky-600"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Przewlekłe choroby</h2>
+              </div>
+              <div class="bg-gradient-to-r from-sky-50 to-cyan-50 border-l-4 border-sky-500 rounded-r-2xl p-4 shadow-sm">
+                <div class="flex justify-between items-start gap-3">
+                  <div>
+                    <h3 class="font-semibold text-slate-800">Skłonność do FLUTD</h3>
+                    <p class="text-sm text-slate-600 mt-1">Dieta urologiczna, kontrola raz na 6 miesięcy</p>
+                  </div>
+                  <span class="shrink-0 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500 text-white shadow-sm">Obserwowane</span>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-violet-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-violet-600"><path d="m18 2 4 4"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/></svg>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Szczepienia i profilaktyka</h2>
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button onclick="showVaccine('wscieklizna-mruczek')" class="text-left relative bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
+                  <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-amber-500 ring-4 ring-amber-100"></div>
+                  <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">Wścieklizna</p>
+                  <p class="text-slate-800 font-bold text-lg">12.05.2025</p>
+                  <p class="text-xs text-rose-600 mt-1 font-semibold">Następna: 12.05.2026 (za 15 dni)</p>
+                </button>
+                <button onclick="showVaccine('tricat-mruczek')" class="text-left relative bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
+                  <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
+                  <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Tricat</p>
+                  <p class="text-slate-800 font-bold text-lg">12.05.2025</p>
+                  <p class="text-xs text-slate-500 mt-1">Następna: 12.05.2026</p>
+                </button>
+                <button onclick="showVaccine('odrobaczanie-mruczek')" class="text-left relative bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
+                  <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
+                  <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Odrobaczanie</p>
+                  <p class="text-slate-800 font-bold text-lg">15.03.2026</p>
+                  <p class="text-xs text-slate-500 mt-1">Następne: 15.06.2026</p>
+                </button>
+                <button onclick="showVaccine('pchly-mruczek')" class="text-left relative bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
+                  <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
+                  <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Pchły / kleszcze</p>
+                  <p class="text-slate-800 font-bold text-lg">01.04.2026</p>
+                  <p class="text-xs text-slate-500 mt-1">Następne: 01.05.2026</p>
+                </button>
+              </div>
+            </section>
+
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-indigo-600"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/></svg>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Aktualne leki</h2>
+              </div>
+              <div class="bg-gradient-to-br from-indigo-50/50 to-violet-50/50 rounded-2xl p-8 text-center border border-indigo-100">
+                <div class="inline-flex w-12 h-12 rounded-full bg-emerald-100 items-center justify-center mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-emerald-600"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <p class="font-bold text-slate-800 mb-1">Brak stałych leków</p>
+                <p class="text-sm text-slate-500">Mruczek nie wymaga obecnie stałej farmakoterapii.</p>
+              </div>
+            </section>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <section>
+                <div class="flex items-center gap-2 mb-4">
+                  <div class="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-orange-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <h2 class="text-xl font-semibold text-slate-800 font-display">Właściciel</h2>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 space-y-3 border border-orange-100 shadow-sm">
+                  <div><p class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-1">Imię i nazwisko</p><p class="text-slate-800 font-medium">Anna Kowalska</p></div>
+                  <div><p class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-1">Telefon</p><p class="text-slate-800 font-medium"><a href="tel:+48987654321" class="hover:text-orange-600">+48 987 654 321</a></p></div>
+                  <div><p class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-1">Email</p><p class="text-slate-800 font-medium"><a href="mailto:anna.kowalska@example.com" class="hover:text-orange-600">anna.kowalska@example.com</a></p></div>
+                  <div><p class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-1">Adres</p><p class="text-slate-800 font-medium">ul. Marszałkowska 15/22, 00-001 Warszawa</p></div>
+                </div>
+              </section>
+              <section>
+                <div class="flex items-center gap-2 mb-4">
+                  <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
+                  </div>
+                  <h2 class="text-xl font-semibold text-slate-800 font-display">Weterynarz</h2>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 space-y-3 border border-emerald-100 shadow-sm">
+                  <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Lecznica</p><p class="text-slate-800 font-medium">Vetlab Warszawa</p></div>
+                  <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Lekarz</p><p class="text-slate-800 font-medium">dr Tomasz Nowak</p></div>
+                  <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Telefon (24h)</p><p class="text-slate-800 font-medium">+48 22 555 11 22</p></div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-violet-50 via-indigo-50 to-blue-50 px-8 py-6 text-center text-sm text-slate-600 border-t border-violet-100 space-y-1">
+            <p>Ostatnia aktualizacja: 27 kwietnia 2026</p>
+            <p class="text-xs text-slate-500">Vetlink · Copyright © Cognify 2026</p>
+          </div>
+        </div>
+      </div>
+      <!-- /KARTA MRUCZEK -->
+
+      <!-- ============ KARTA: PĄCZEK (papuga aleksandretta) ============ -->
+      <div data-pet-card="paczek" class="hidden">
+        <div class="lost-mode-hide bg-white rounded-3xl shadow-2xl shadow-emerald-200/50 overflow-hidden ring-1 ring-emerald-100">
+          <div class="relative bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 px-8 py-12 text-white overflow-hidden header-shine">
+            <div class="absolute inset-0 paw-header opacity-100"></div>
+            <div class="relative flex items-center gap-5">
+              <div class="w-24 h-24 bg-white/25 backdrop-blur-md rounded-3xl flex items-center justify-center shadow-lg ring-2 ring-white/40 rotate-[-6deg]">
+                <span class="text-5xl">🦜</span>
+              </div>
+              <div>
+                <h1 class="font-display text-5xl font-bold drop-shadow-sm">Pączek</h1>
+                <p class="text-white/90 text-lg font-medium mt-1 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                  Karta Zwierzaka
+                </p>
+              </div>
+            </div>
+            <div class="relative mt-6 flex flex-wrap items-center gap-2 sm:absolute sm:top-6 sm:right-6 sm:mt-0 sm:flex-col sm:items-end">
+              <div class="bg-white/20 backdrop-blur-md rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wide ring-1 ring-white/30">ID: 616 093 900 098 234</div>
+              <button onclick="showView('panel')" class="group bg-white text-emerald-600 hover:bg-emerald-50 active:scale-95 transition-all rounded-full pl-3 pr-2 py-1.5 sm:pl-4 sm:pr-3 sm:py-2 text-sm font-bold shadow-lg shadow-emerald-900/20 ring-2 ring-white/60 inline-flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                System
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-8 space-y-8">
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center">
+                  <span class="text-lg">🦜</span>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Dane Zwierzaka</h2>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100">
+                <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Gatunek</p><p class="text-slate-800 font-medium">Ptak</p></div>
+                <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Rasa</p><p class="text-slate-800 font-medium">Aleksandretta obrożna</p></div>
+                <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Data urodzenia</p><p class="text-slate-800 font-medium">5 czerwca 2023</p></div>
+                <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Wiek</p><p class="text-slate-800 font-medium">2 lata</p></div>
+                <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Płeć</p><p class="text-slate-800 font-medium">Samiec</p></div>
+                <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Ubarwienie</p><p class="text-slate-800 font-medium">Zielone z różową obrożą</p></div>
+                <div class="md:col-span-2 pt-3 border-t border-emerald-200">
+                  <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Mikroczip</p>
+                  <p class="text-slate-800 font-mono font-medium tracking-wider">616 093 900 098 234</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Parametry zdrowotne</h2>
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-gradient-to-br from-slate-100 to-slate-200/50 text-slate-600 rounded-2xl p-5 text-center shadow-sm">
+                  <div class="flex justify-center mb-2"><div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></div></div>
+                  <p class="text-xs font-semibold mb-1 uppercase tracking-wide opacity-80">Grupa krwi</p>
+                  <p class="text-base font-bold">nie badano</p>
+                </div>
+                <div class="bg-gradient-to-br from-sky-100 to-sky-200/50 text-sky-700 rounded-2xl p-5 text-center shadow-sm">
+                  <div class="flex justify-center mb-2"><div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M7 21V8"/><path d="M17 21V4"/></svg></div></div>
+                  <p class="text-xs font-semibold mb-1 uppercase tracking-wide opacity-80">Długość</p>
+                  <p class="text-xl font-bold">38 cm</p>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-100 to-emerald-200/50 text-emerald-700 rounded-2xl p-5 text-center shadow-sm">
+                  <div class="flex justify-center mb-2"><div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div></div>
+                  <p class="text-xs font-semibold mb-1 uppercase tracking-wide opacity-80">Waga</p>
+                  <p class="text-xl font-bold">220 g</p>
+                </div>
+                <div class="bg-gradient-to-br from-violet-100 to-violet-200/50 text-violet-700 rounded-2xl p-5 text-center shadow-sm">
+                  <div class="flex justify-center mb-2"><div class="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+                  <p class="text-xs font-semibold mb-1 uppercase tracking-wide opacity-80">Stan ogólny</p>
+                  <p class="text-xl font-bold">5/5</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-rose-600"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Alergie i choroby</h2>
+              </div>
+              <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 text-center border border-emerald-100">
+                <div class="inline-flex w-12 h-12 rounded-full bg-emerald-100 items-center justify-center mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-emerald-600"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <p class="font-bold text-slate-800 mb-1">Brak rozpoznanych dolegliwości</p>
+                <p class="text-sm text-slate-500">Pączek jest zdrowy. Brak alergii i chorób przewlekłych.</p>
+              </div>
+            </section>
+
+            <section>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-violet-100 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-violet-600"><path d="m18 2 4 4"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/></svg>
+                </div>
+                <h2 class="text-xl font-semibold text-slate-800 font-display">Szczepienia i profilaktyka</h2>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <button onclick="showVaccine('polyoma-paczek')" class="text-left relative bg-gradient-to-br from-rose-50 to-orange-50 border border-rose-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
+                  <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-rose-500 ring-4 ring-rose-100"></div>
+                  <p class="text-xs font-semibold text-rose-700 uppercase tracking-wide mb-1">Polyomavirus papug</p>
+                  <p class="text-slate-800 font-bold text-lg">01.07.2024</p>
+                  <p class="text-xs text-rose-600 mt-1 font-semibold">⚠ Zaległe od 01.07.2025</p>
+                </button>
+                <button onclick="showVaccine('profilaktyka-paczek')" class="text-left relative bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition cursor-pointer">
+                  <div class="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-4 ring-emerald-100"></div>
+                  <p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Profilaktyka pasożytnicza</p>
+                  <p class="text-slate-800 font-bold text-lg">15.01.2026</p>
+                  <p class="text-xs text-slate-500 mt-1">Następne: 15.07.2026</p>
+                </button>
+              </div>
+            </section>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <section>
+                <div class="flex items-center gap-2 mb-4">
+                  <div class="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-orange-600"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <h2 class="text-xl font-semibold text-slate-800 font-display">Właściciel</h2>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 space-y-3 border border-orange-100 shadow-sm">
+                  <div><p class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-1">Imię i nazwisko</p><p class="text-slate-800 font-medium">Anna Kowalska</p></div>
+                  <div><p class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-1">Telefon</p><p class="text-slate-800 font-medium"><a href="tel:+48987654321" class="hover:text-orange-600">+48 987 654 321</a></p></div>
+                  <div><p class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-1">Email</p><p class="text-slate-800 font-medium"><a href="mailto:anna.kowalska@example.com" class="hover:text-orange-600">anna.kowalska@example.com</a></p></div>
+                  <div><p class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-1">Adres</p><p class="text-slate-800 font-medium">ul. Marszałkowska 15/22, 00-001 Warszawa</p></div>
+                </div>
+              </section>
+              <section>
+                <div class="flex items-center gap-2 mb-4">
+                  <div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
+                  </div>
+                  <h2 class="text-xl font-semibold text-slate-800 font-display">Weterynarz</h2>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 space-y-3 border border-emerald-100 shadow-sm">
+                  <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Lecznica</p><p class="text-slate-800 font-medium">VetExotic Warszawa</p></div>
+                  <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Lekarz</p><p class="text-slate-800 font-medium">dr Iwona Adamska</p></div>
+                  <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Specjalizacja</p><p class="text-slate-800 font-medium">Ptaki egzotyczne</p></div>
+                  <div><p class="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Telefon</p><p class="text-slate-800 font-medium">+48 22 555 22 33</p></div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 px-8 py-6 text-center text-sm text-slate-600 border-t border-emerald-100 space-y-1">
+            <p>Ostatnia aktualizacja: 27 kwietnia 2026</p>
+            <p class="text-xs text-slate-500">Vetlink · Copyright © Cognify 2026</p>
+          </div>
+        </div>
+      </div>
+      <!-- /KARTA PĄCZEK -->
+
     </div>
   </div>
   <!-- /VIEW 1 -->
@@ -760,7 +1165,7 @@
           </button>
 
           <div class="mt-auto pt-6">
-            <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 border border-amber-100">
+            <div id="premium-sidebar-card" class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 border border-amber-100">
               <div class="flex items-center gap-2 mb-2">
                 <div class="w-8 h-8 rounded-lg bg-amber-200/70 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="text-amber-700"><path d="M12 2 4 5v6c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V5z"></path><path d="m9 12 2 2 4-4"></path></svg>
@@ -768,7 +1173,7 @@
                 <p class="font-bold text-amber-900 text-sm">Plan Premium</p>
               </div>
               <p class="text-xs text-amber-800/80 mb-3 leading-snug">Nieograniczone zwierzaki, kalendarz i dokumenty.</p>
-              <button class="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-sm font-bold py-2 rounded-lg shadow-sm transition">Aktywuj</button>
+              <button onclick="openModal('premium-modal')" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-sm font-bold py-2 rounded-lg shadow-sm transition">Aktywuj</button>
             </div>
           </div>
         </aside>
@@ -860,7 +1265,7 @@
                 <button onclick="setTab('manage')" class="text-sm text-orange-600 font-semibold hover:underline">Zobacz wszystkie →</button>
               </div>
               <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div onclick="showView('card')" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-orange-200 transition cursor-pointer">
+                <div onclick="setActivePet('burek')" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-orange-200 transition cursor-pointer">
                   <div class="flex items-center gap-3 mb-3">
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-300 to-orange-400 flex items-center justify-center text-3xl shadow-sm shrink-0">🐕</div>
                     <div class="flex-1 min-w-0">
@@ -875,7 +1280,7 @@
                     <div><p class="text-[10px] text-slate-400 uppercase tracking-wider">Wizyta</p><p class="text-sm font-bold text-orange-600">7 dni</p></div>
                   </div>
                 </div>
-                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer">
+                <div onclick="setActivePet('mruczek')" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-violet-200 transition cursor-pointer">
                   <div class="flex items-center gap-3 mb-3">
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-300 to-indigo-400 flex items-center justify-center text-3xl shadow-sm shrink-0">🐈</div>
                     <div class="flex-1 min-w-0">
@@ -890,7 +1295,7 @@
                     <div><p class="text-[10px] text-slate-400 uppercase tracking-wider">Szczep.</p><p class="text-sm font-bold text-amber-600">15 dni</p></div>
                   </div>
                 </div>
-                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer">
+                <div onclick="setActivePet('paczek')" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-emerald-200 transition cursor-pointer">
                   <div class="flex items-center gap-3 mb-3">
                     <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-300 to-teal-400 flex items-center justify-center text-3xl shadow-sm shrink-0">🦜</div>
                     <div class="flex-1 min-w-0">
@@ -1065,7 +1470,7 @@
                       <td class="px-5 py-4"><span class="inline-flex items-center gap-1.5 text-xs font-semibold bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Zdrowy</span></td>
                       <td class="px-5 py-4">
                         <div class="flex items-center gap-1">
-                          <button onclick="showView('card')" class="p-2 hover:bg-orange-100 text-slate-600 hover:text-orange-600 rounded-lg transition" title="Otwórz kartę">
+                          <button onclick="setActivePet('burek')" class="p-2 hover:bg-orange-100 text-slate-600 hover:text-orange-600 rounded-lg transition" title="Otwórz kartę">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                           </button>
                           <button class="p-2 hover:bg-slate-100 text-slate-600 rounded-lg transition" title="Edytuj">
@@ -1090,7 +1495,7 @@
                       <td class="px-5 py-4"><span class="inline-flex items-center gap-1.5 text-xs font-semibold bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Szczepienie</span></td>
                       <td class="px-5 py-4">
                         <div class="flex items-center gap-1">
-                          <button class="p-2 hover:bg-orange-100 text-slate-600 hover:text-orange-600 rounded-lg transition" title="Otwórz kartę">
+                          <button onclick="setActivePet('mruczek')" class="p-2 hover:bg-orange-100 text-slate-600 hover:text-orange-600 rounded-lg transition" title="Otwórz kartę">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                           </button>
                           <button class="p-2 hover:bg-slate-100 text-slate-600 rounded-lg transition" title="Edytuj">
@@ -1115,7 +1520,7 @@
                       <td class="px-5 py-4"><span class="inline-flex items-center gap-1.5 text-xs font-semibold bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Zdrowy</span></td>
                       <td class="px-5 py-4">
                         <div class="flex items-center gap-1">
-                          <button class="p-2 hover:bg-orange-100 text-slate-600 hover:text-orange-600 rounded-lg transition" title="Otwórz kartę">
+                          <button onclick="setActivePet('paczek')" class="p-2 hover:bg-orange-100 text-slate-600 hover:text-orange-600 rounded-lg transition" title="Otwórz kartę">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                           </button>
                           <button class="p-2 hover:bg-slate-100 text-slate-600 rounded-lg transition" title="Edytuj">
@@ -1132,7 +1537,7 @@
               </div>
               <!-- Mobile cards -->
               <div class="md:hidden divide-y divide-slate-100">
-                <div class="p-4 flex items-center gap-3" onclick="showView('card')">
+                <div class="p-4 flex items-center gap-3" onclick="setActivePet('burek')">
                   <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-300 to-orange-400 flex items-center justify-center text-2xl shrink-0">🐕</div>
                   <div class="flex-1 min-w-0">
                     <p class="font-bold text-slate-800 truncate">Burek</p>
@@ -1141,7 +1546,7 @@
                   </div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 shrink-0"><path d="m9 18 6-6-6-6"></path></svg>
                 </div>
-                <div class="p-4 flex items-center gap-3">
+                <div class="p-4 flex items-center gap-3" onclick="setActivePet('mruczek')">
                   <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-300 to-indigo-400 flex items-center justify-center text-2xl shrink-0">🐈</div>
                   <div class="flex-1 min-w-0">
                     <p class="font-bold text-slate-800 truncate">Mruczek</p>
@@ -1150,7 +1555,7 @@
                   </div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400 shrink-0"><path d="m9 18 6-6-6-6"></path></svg>
                 </div>
-                <div class="p-4 flex items-center gap-3">
+                <div class="p-4 flex items-center gap-3" onclick="setActivePet('paczek')">
                   <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-300 to-teal-400 flex items-center justify-center text-2xl shrink-0">🦜</div>
                   <div class="flex-1 min-w-0">
                     <p class="font-bold text-slate-800 truncate">Pączek</p>
@@ -1171,14 +1576,14 @@
                 <p class="font-bold text-slate-800">Skan dokumentu (AI)</p>
                 <p class="text-xs text-slate-500 mt-1">Zrób zdjęcie wypisu — AI uzupełni dane.</p>
               </div>
-              <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-violet-200 transition cursor-pointer">
+              <div onclick="openModal('pdf-modal')" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-violet-200 transition cursor-pointer">
                 <div class="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center mb-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-600"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line></svg>
                 </div>
                 <p class="font-bold text-slate-800">Eksport PDF</p>
                 <p class="text-xs text-slate-500 mt-1">Pełna karta zdrowia jednym klikiem.</p>
               </div>
-              <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-orange-200 transition cursor-pointer">
+              <div onclick="openModal('nfc-modal'); setNfcTab('qr');" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-orange-200 transition cursor-pointer">
                 <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center mb-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-600"><rect width="5" height="5" x="3" y="3" rx="1"></rect><rect width="5" height="5" x="16" y="3" rx="1"></rect><rect width="5" height="5" x="3" y="16" rx="1"></rect><path d="M21 16h-3a2 2 0 0 0-2 2v3"></path><path d="M21 21v.01"></path><path d="M12 7v3a2 2 0 0 1-2 2H7"></path><path d="M3 12h.01"></path><path d="M12 3h.01"></path><path d="M12 16v.01"></path><path d="M16 12h1"></path><path d="M21 12v.01"></path><path d="M12 21v-1"></path></svg>
                 </div>
@@ -1195,11 +1600,11 @@
               <p class="text-slate-500 mt-1 text-sm">Lista nadchodzących i historycznych wizyt.</p>
             </div>
             <div class="flex gap-2">
-              <button class="px-4 py-2 rounded-xl bg-orange-500 text-white text-sm font-bold shadow">Nadchodzące (4)</button>
-              <button class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50">Historyczne (12)</button>
+              <button data-visit-tab="upcoming" onclick="setVisitTab('upcoming')" class="vt-active visit-tab-btn px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-bold transition">Nadchodzące (4)</button>
+              <button data-visit-tab="past" onclick="setVisitTab('past')" class="visit-tab-btn px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-sm font-medium hover:bg-slate-50 transition">Historyczne (12)</button>
             </div>
 
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm divide-y divide-slate-100">
+            <div data-visit-list="upcoming" class="bg-white rounded-2xl border border-slate-200 shadow-sm divide-y divide-slate-100">
               <div class="p-5 flex items-start gap-4">
                 <div class="shrink-0 w-14 h-14 rounded-xl bg-rose-100 text-rose-700 flex flex-col items-center justify-center">
                   <span class="text-[10px] font-bold uppercase">maj</span>
@@ -1217,8 +1622,8 @@
                   </p>
                 </div>
                 <div class="hidden sm:flex flex-col gap-2 shrink-0">
-                  <button class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">Zmień</button>
-                  <button class="px-3 py-1.5 text-xs font-bold rounded-lg bg-rose-100 text-rose-700 hover:bg-rose-200">Anuluj</button>
+                  <button onclick="openModal('visit-edit-modal')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">Zmień</button>
+                  <button onclick="openModal('visit-cancel-modal')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-rose-100 text-rose-700 hover:bg-rose-200">Anuluj</button>
                 </div>
               </div>
               <div class="p-5 flex items-start gap-4">
@@ -1238,8 +1643,8 @@
                   </p>
                 </div>
                 <div class="hidden sm:flex flex-col gap-2 shrink-0">
-                  <button class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">Zmień</button>
-                  <button class="px-3 py-1.5 text-xs font-bold rounded-lg bg-rose-100 text-rose-700 hover:bg-rose-200">Anuluj</button>
+                  <button onclick="openModal('visit-edit-modal')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">Zmień</button>
+                  <button onclick="openModal('visit-cancel-modal')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-rose-100 text-rose-700 hover:bg-rose-200">Anuluj</button>
                 </div>
               </div>
               <div class="p-5 flex items-start gap-4">
@@ -1259,8 +1664,8 @@
                   </p>
                 </div>
                 <div class="hidden sm:flex flex-col gap-2 shrink-0">
-                  <button class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">Zmień</button>
-                  <button class="px-3 py-1.5 text-xs font-bold rounded-lg bg-rose-100 text-rose-700 hover:bg-rose-200">Anuluj</button>
+                  <button onclick="openModal('visit-edit-modal')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">Zmień</button>
+                  <button onclick="openModal('visit-cancel-modal')" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-rose-100 text-rose-700 hover:bg-rose-200">Anuluj</button>
                 </div>
               </div>
               <div class="p-5 flex items-start gap-4">
@@ -1281,7 +1686,119 @@
               </div>
             </div>
 
-            <button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-5 py-3 rounded-xl font-semibold shadow-lg shadow-orange-200/70 hover:shadow-xl transition">
+            <!-- LIST: HISTORYCZNE -->
+            <div data-visit-list="past" class="hidden bg-white rounded-2xl border border-slate-200 shadow-sm divide-y divide-slate-100">
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">KWI</span><span class="text-sm font-bold leading-none">18</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Szczepienie DHPPi+L4 — Burek</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Notatka: pacjent w pełnej formie, przypomnienie 10.04.2027</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">KWI</span><span class="text-sm font-bold leading-none">10</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Wścieklizna — Burek</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Certyfikat PL-2026-04-10-RB-0042</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">MAR</span><span class="text-sm font-bold leading-none">12</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Kontrola tarczycy — Burek</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">TSH w normie, kontynuacja Lewotyroksyny 0,4 mg</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-violet-100 text-violet-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">MAR</span><span class="text-sm font-bold leading-none">15</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Odrobaczanie — Burek + Mruczek</p>
+                  <p class="text-xs text-slate-500 mt-0.5">Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Drontal Plus, profilaktyka</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">LUT</span><span class="text-sm font-bold leading-none">03</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Zapalenie ucha zewnętrznego — Burek</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Otibiovin krople, kontrola za 14 dni — uznane za wyleczone</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">STY</span><span class="text-sm font-bold leading-none">22</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">RTG stawów biodrowych — Burek</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Kontrola dysplazji — bez progresji od 2024</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">STY</span><span class="text-sm font-bold leading-none">15</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Pączek — kontrola po linieniu</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Iwona Adamska · VetExotic Warszawa, al. Niepodległości 88</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Wszystkie pióra zdrowe, dieta zbalansowana</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-violet-100 text-violet-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">GRU</span><span class="text-sm font-bold leading-none">05</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Mruczek — sterylizacja</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Zabieg bez powikłań, szwy zdjęte 19.12.2025</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">LIS</span><span class="text-sm font-bold leading-none">12</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Burek — badanie krwi (morfologia)</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Profil seniora — wyniki w normie</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">PAŹ</span><span class="text-sm font-bold leading-none">28</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Burek — szczepienie wścieklizny (poprzednie)</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Certyfikat PL-2025-04-10-RB-0019</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">WRZ</span><span class="text-sm font-bold leading-none">14</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Mruczek — kontrola FLUTD</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Tomasz Nowak · Vetlab Warszawa, ul. Wiejska 12</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Brak symptomów, kontynuacja diety urologicznej</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+              <div class="p-4 flex items-start gap-3">
+                <div class="shrink-0 w-12 h-12 rounded-xl bg-violet-100 text-violet-700 flex flex-col items-center justify-center"><span class="text-[9px] font-bold">SIE</span><span class="text-sm font-bold leading-none">02</span></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm">Pączek — pierwsza wizyta + mikroczip</p>
+                  <p class="text-xs text-slate-500 mt-0.5">dr Iwona Adamska · VetExotic Warszawa, al. Niepodległości 88</p>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Implantacja chipu, badanie ogólne, dieta ustalona</p>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 shrink-0">Wykonane</span>
+              </div>
+            </div>
+
+            <button onclick="openModal('visit-new-modal')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-5 py-3 rounded-xl font-semibold shadow-lg shadow-orange-200/70 hover:shadow-xl transition">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
               Umów nową wizytę
             </button>
@@ -1568,6 +2085,319 @@
 </div>
 
 <!-- ============================================================ -->
+<!-- MODAL: VACCINE INFO                                          -->
+<!-- ============================================================ -->
+<div id="vaccine-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-7">
+    <div id="vaccine-modal-content"></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MODAL: PREMIUM UPGRADE                                       -->
+<!-- ============================================================ -->
+<div id="premium-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full my-8 overflow-hidden">
+    <div class="relative bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 px-6 py-8 text-white">
+      <button onclick="closeModal('premium-modal')" class="absolute top-4 right-4 p-1.5 hover:bg-white/20 rounded-lg text-white/80 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <p class="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Wybierz plan</p>
+      <h2 class="font-display text-3xl font-bold mb-1">Odblokuj pełny Vetlink</h2>
+      <p class="text-white/90">Pierwsze 3 miesiące Premium gratis. Anulujesz w każdej chwili.</p>
+    </div>
+
+    <div class="p-6 grid sm:grid-cols-3 gap-4">
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Free</p>
+        <p class="font-display text-3xl font-bold text-slate-800 mb-1">€0</p>
+        <p class="text-xs text-slate-500 mb-4">+ tag €44</p>
+        <ul class="space-y-2 text-sm text-slate-600 mb-5 flex-1">
+          <li>✓ 1 zwierzę</li>
+          <li>✓ Public scan</li>
+          <li>✓ Lost mode</li>
+          <li class="text-slate-400">✗ Historia + dokumenty</li>
+          <li class="text-slate-400">✗ OCR</li>
+        </ul>
+        <button class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-sm">Aktualny plan</button>
+      </div>
+      <div class="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-400 rounded-2xl p-5 flex flex-col relative shadow-xl shadow-orange-200/50">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-orange-500 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow">Polecane</span>
+        <p class="text-xs font-bold uppercase tracking-wider text-orange-700 mb-2">Premium</p>
+        <p class="font-display text-3xl font-bold text-slate-900 mb-1">€3,99<span class="text-base text-slate-500">/mc</span></p>
+        <p class="text-xs text-emerald-700 font-semibold mb-4">3 mc gratis na start</p>
+        <ul class="space-y-2 text-sm text-slate-700 mb-5 flex-1">
+          <li>✓ Wszystko z Free</li>
+          <li>✓ Pełna historia + dokumenty</li>
+          <li>✓ Kalendarz szczepień</li>
+          <li>✓ OCR (10/mc)</li>
+          <li>✓ Vet API</li>
+        </ul>
+        <button onclick="activatePremium()" class="w-full px-4 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white font-bold shadow-lg shadow-orange-200/70">Aktywuj Premium</button>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Family</p>
+        <p class="font-display text-3xl font-bold text-slate-800 mb-1">€7,99<span class="text-base text-slate-500">/mc</span></p>
+        <p class="text-xs text-slate-500 mb-4">do 5 pupili</p>
+        <ul class="space-y-2 text-sm text-slate-600 mb-5 flex-1">
+          <li>✓ Wszystko z Premium</li>
+          <li>✓ 5 zwierząt</li>
+          <li>✓ OCR unlimited</li>
+          <li>✓ Współwłaściciel</li>
+          <li>✓ Integracja PIMS</li>
+        </ul>
+        <button onclick="alert('Family activation — mock'); closeModal('premium-modal');" class="w-full px-4 py-2.5 rounded-xl border-2 border-slate-300 text-slate-700 font-bold text-sm hover:bg-slate-50">Wybierz Family</button>
+      </div>
+    </div>
+    <div class="px-6 pb-5 text-center">
+      <p class="text-[11px] text-slate-400">Demo: kliknięcie aktywuje plan w prototypie. Płatność Stripe — w wersji produkcyjnej.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MODAL: PDF EXPORT                                            -->
+<!-- ============================================================ -->
+<div id="pdf-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full my-8 overflow-hidden">
+    <div class="flex items-center justify-between p-5 border-b border-slate-100">
+      <h3 class="font-display font-bold text-lg text-slate-800">Eksport karty do PDF</h3>
+      <button onclick="closeModal('pdf-modal')" class="p-1.5 hover:bg-slate-100 rounded-lg text-slate-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Pupil</p>
+        <div class="grid grid-cols-3 gap-2">
+          <label class="flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-slate-200 hover:border-orange-300 cursor-pointer has-[:checked]:border-orange-500 has-[:checked]:bg-orange-50">
+            <input type="radio" name="pdf-pet" value="burek" checked class="sr-only">
+            <span class="text-2xl">🐕</span><span class="text-xs font-semibold text-slate-700">Burek</span>
+          </label>
+          <label class="flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-slate-200 hover:border-violet-300 cursor-pointer has-[:checked]:border-violet-500 has-[:checked]:bg-violet-50">
+            <input type="radio" name="pdf-pet" value="mruczek" class="sr-only">
+            <span class="text-2xl">🐈</span><span class="text-xs font-semibold text-slate-700">Mruczek</span>
+          </label>
+          <label class="flex flex-col items-center gap-1 p-3 rounded-xl border-2 border-slate-200 hover:border-emerald-300 cursor-pointer has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-50">
+            <input type="radio" name="pdf-pet" value="paczek" class="sr-only">
+            <span class="text-2xl">🦜</span><span class="text-xs font-semibold text-slate-700">Pączek</span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Sekcje do uwzględnienia</p>
+        <div class="space-y-2">
+          <label class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 accent-orange-500"><span class="text-sm">Dane podstawowe + parametry</span></label>
+          <label class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 accent-orange-500"><span class="text-sm">Alergie i choroby przewlekłe</span></label>
+          <label class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 accent-orange-500"><span class="text-sm">Aktualne leki</span></label>
+          <label class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer"><input type="checkbox" checked class="w-4 h-4 accent-orange-500"><span class="text-sm">Szczepienia + kalendarz</span></label>
+          <label class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-orange-500"><span class="text-sm">Historia wizyt (12)</span></label>
+          <label class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 cursor-pointer"><input type="checkbox" class="w-4 h-4 accent-orange-500"><span class="text-sm">Dokumenty (7)</span></label>
+        </div>
+      </div>
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Język</p>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border-2 border-slate-200 hover:border-orange-300 cursor-pointer has-[:checked]:border-orange-500 has-[:checked]:bg-orange-50"><input type="radio" name="pdf-lang" value="pl" checked class="sr-only"><span class="text-lg">🇵🇱</span><span class="text-sm font-semibold">Polski</span></label>
+          <label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border-2 border-slate-200 hover:border-orange-300 cursor-pointer has-[:checked]:border-orange-500 has-[:checked]:bg-orange-50"><input type="radio" name="pdf-lang" value="en" class="sr-only"><span class="text-lg">🇬🇧</span><span class="text-sm font-semibold">English</span></label>
+        </div>
+      </div>
+      <button onclick="generatePdf()" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white py-3 rounded-xl font-bold shadow-lg shadow-orange-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Generuj PDF
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MODAL: NFC / QR                                              -->
+<!-- ============================================================ -->
+<div id="nfc-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full my-8 overflow-hidden">
+    <div class="flex items-center justify-between p-5 border-b border-slate-100">
+      <h3 class="font-display font-bold text-lg text-slate-800">Twój kod</h3>
+      <button onclick="closeModal('nfc-modal')" class="p-1.5 hover:bg-slate-100 rounded-lg text-slate-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-5 pt-4">
+      <div class="flex bg-slate-100 rounded-xl p-1 gap-1">
+        <button onclick="setNfcTab('qr')" data-nfc-tab="qr" class="nfc-tab flex-1 py-2 rounded-lg text-sm font-bold transition">Kod QR</button>
+        <button onclick="setNfcTab('nfc')" data-nfc-tab="nfc" class="nfc-tab flex-1 py-2 rounded-lg text-sm font-bold transition">Tag NFC</button>
+      </div>
+    </div>
+    <div class="p-5">
+      <div data-nfc-content="qr" class="text-center">
+        <div class="inline-block bg-white p-4 rounded-2xl border-2 border-slate-200 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+            <rect width="200" height="200" fill="white"/>
+            <g fill="black">
+              <rect x="10" y="10" width="50" height="50"/><rect x="20" y="20" width="30" height="30" fill="white"/><rect x="25" y="25" width="20" height="20"/>
+              <rect x="140" y="10" width="50" height="50"/><rect x="150" y="20" width="30" height="30" fill="white"/><rect x="155" y="25" width="20" height="20"/>
+              <rect x="10" y="140" width="50" height="50"/><rect x="20" y="150" width="30" height="30" fill="white"/><rect x="25" y="155" width="20" height="20"/>
+              <rect x="70" y="10" width="10" height="10"/><rect x="90" y="10" width="10" height="10"/><rect x="110" y="10" width="20" height="10"/>
+              <rect x="70" y="30" width="20" height="10"/><rect x="100" y="30" width="10" height="10"/><rect x="120" y="30" width="10" height="10"/>
+              <rect x="70" y="50" width="10" height="10"/><rect x="90" y="50" width="20" height="10"/><rect x="120" y="50" width="10" height="10"/>
+              <rect x="10" y="70" width="20" height="10"/><rect x="40" y="70" width="10" height="10"/><rect x="70" y="70" width="10" height="10"/><rect x="100" y="70" width="20" height="10"/><rect x="140" y="70" width="10" height="10"/><rect x="170" y="70" width="20" height="10"/>
+              <rect x="20" y="90" width="10" height="10"/><rect x="50" y="90" width="20" height="10"/><rect x="90" y="90" width="20" height="10"/><rect x="130" y="90" width="10" height="10"/><rect x="160" y="90" width="20" height="10"/>
+              <rect x="10" y="110" width="10" height="10"/><rect x="30" y="110" width="20" height="10"/><rect x="70" y="110" width="20" height="10"/><rect x="110" y="110" width="10" height="10"/><rect x="140" y="110" width="20" height="10"/><rect x="180" y="110" width="10" height="10"/>
+              <rect x="20" y="130" width="20" height="10"/><rect x="50" y="130" width="10" height="10"/><rect x="90" y="130" width="10" height="10"/><rect x="120" y="130" width="20" height="10"/><rect x="150" y="130" width="10" height="10"/><rect x="170" y="130" width="20" height="10"/>
+              <rect x="70" y="140" width="10" height="10"/><rect x="100" y="140" width="20" height="10"/><rect x="130" y="140" width="10" height="10"/>
+              <rect x="80" y="160" width="10" height="10"/><rect x="100" y="160" width="10" height="10"/><rect x="120" y="160" width="20" height="10"/><rect x="160" y="160" width="20" height="10"/>
+              <rect x="70" y="180" width="20" height="10"/><rect x="110" y="180" width="10" height="10"/><rect x="140" y="180" width="20" height="10"/>
+            </g>
+          </svg>
+        </div>
+        <p class="text-xs text-slate-500 mb-1">Skan kierujący na</p>
+        <p class="font-mono text-sm font-semibold text-slate-800 mb-5">vetlink.eu/t/<span id="nfc-tag-id">abc123x</span></p>
+        <div class="flex gap-2">
+          <button onclick="showToast('QR pobrany ✓')" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-amber-400 to-orange-500 text-white text-sm font-bold py-2.5 rounded-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Pobierz PNG
+          </button>
+          <button onclick="showToast('Wysłane do druku ✓')" class="px-4 py-2.5 text-sm font-bold text-slate-600 hover:bg-slate-100 rounded-xl">Drukuj</button>
+        </div>
+      </div>
+      <div data-nfc-content="nfc" class="hidden">
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-5 mb-4 border border-amber-200">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-orange-600"><path d="M5 12h14"/><path d="M12 5v14"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wider text-orange-700">Tag NFC NTAG215</p>
+              <p class="font-bold text-slate-800">Aktywny</p>
+            </div>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between"><span class="text-slate-500">UID</span><span class="font-mono text-slate-800">04:3F:A2:9C:B7:80:00</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Pojemność</span><span class="font-semibold text-slate-800">504 B</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Aktywowany</span><span class="font-semibold text-slate-800">15.04.2026</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Skanów</span><span class="font-semibold text-slate-800">23</span></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <button onclick="showToast('Zapasowy tag zamówiony — wysyłka 3-5 dni ✓')" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white py-2.5 rounded-xl font-bold">Zamów zapasowy tag (€24)</button>
+          <button onclick="showToast('Tag zdezaktywowany. Można go bezpiecznie wyrzucić.')" class="w-full px-4 py-2.5 text-sm font-bold text-rose-600 hover:bg-rose-50 rounded-xl">Dezaktywuj tag</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MODAL: NEW VISIT                                             -->
+<!-- ============================================================ -->
+<div id="visit-new-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full my-8 overflow-hidden">
+    <div class="flex items-center justify-between p-5 border-b border-slate-100">
+      <h3 class="font-display font-bold text-lg text-slate-800">Umów nową wizytę</h3>
+      <button onclick="closeModal('visit-new-modal')" class="p-1.5 hover:bg-slate-100 rounded-lg text-slate-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-5 space-y-4">
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Pupil</p>
+        <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white"><option>🐕 Burek</option><option>🐈 Mruczek</option><option>🦜 Pączek</option></select>
+      </div>
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Typ wizyty</p>
+        <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white"><option>Kontrola ogólna</option><option>Szczepienie</option><option>Badania krwi</option><option>USG / RTG</option><option>Stomatologia</option><option>Zabieg / operacja</option><option>Inne</option></select>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Data</p>
+          <input type="date" value="2026-05-04" class="w-full px-4 py-2.5 rounded-xl border border-slate-200">
+        </div>
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Godzina</p>
+          <input type="time" value="14:00" class="w-full px-4 py-2.5 rounded-xl border border-slate-200">
+        </div>
+      </div>
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Lecznica</p>
+        <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white"><option>Vetlab Warszawa — ul. Wiejska 12</option><option>VetExotic Warszawa — al. Niepodległości 88</option><option>+ Dodaj nową lecznicę</option></select>
+      </div>
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Lekarz (opcjonalnie)</p>
+        <input type="text" placeholder="np. dr Tomasz Nowak" class="w-full px-4 py-2.5 rounded-xl border border-slate-200">
+      </div>
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Notatki</p>
+        <textarea rows="2" placeholder="np. po posiłku, kontrola po zabiegu" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 resize-none"></textarea>
+      </div>
+      <div class="flex gap-2 pt-2">
+        <button onclick="closeModal('visit-new-modal')" class="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold">Anuluj</button>
+        <button onclick="closeModal('visit-new-modal'); showToast('Wizyta zaplanowana ✓');" class="flex-1 bg-gradient-to-r from-amber-400 to-orange-500 text-white py-2.5 rounded-xl font-bold shadow-lg shadow-orange-200">Zaplanuj</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MODAL: EDIT VISIT (zmień)                                    -->
+<!-- ============================================================ -->
+<div id="visit-edit-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full my-8 overflow-hidden">
+    <div class="flex items-center justify-between p-5 border-b border-slate-100">
+      <h3 class="font-display font-bold text-lg text-slate-800">Zmień wizytę</h3>
+      <button onclick="closeModal('visit-edit-modal')" class="p-1.5 hover:bg-slate-100 rounded-lg text-slate-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-5 space-y-4" id="visit-edit-content">
+      <div class="bg-orange-50 border border-orange-200 rounded-xl p-3 text-sm">
+        <p class="font-bold text-slate-800 mb-0.5" id="visit-edit-title">Kontrola dysplazji — Burek</p>
+        <p class="text-xs text-slate-500" id="visit-edit-info">04.05.2026 · 14:00 · Vetlab Warszawa</p>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Nowa data</p>
+          <input type="date" value="2026-05-04" class="w-full px-4 py-2.5 rounded-xl border border-slate-200">
+        </div>
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Nowa godzina</p>
+          <input type="time" value="14:00" class="w-full px-4 py-2.5 rounded-xl border border-slate-200">
+        </div>
+      </div>
+      <div>
+        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Powód zmiany (opcjonalnie)</p>
+        <textarea rows="2" placeholder="np. wyjazd, koliduje z innym terminem" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 resize-none"></textarea>
+      </div>
+      <div class="flex gap-2 pt-2">
+        <button onclick="closeModal('visit-edit-modal')" class="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold">Anuluj</button>
+        <button onclick="closeModal('visit-edit-modal'); showToast('Termin zmieniony ✓');" class="flex-1 bg-gradient-to-r from-amber-400 to-orange-500 text-white py-2.5 rounded-xl font-bold shadow-lg shadow-orange-200">Zapisz zmianę</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MODAL: CANCEL VISIT (anuluj)                                 -->
+<!-- ============================================================ -->
+<div id="visit-cancel-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-6">
+    <div class="text-center mb-5">
+      <div class="inline-flex w-14 h-14 rounded-2xl bg-rose-100 items-center justify-center mb-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-rose-600"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+      </div>
+      <h3 class="font-display font-bold text-xl text-slate-800 mb-1">Odwołać wizytę?</h3>
+      <p class="text-sm text-slate-500" id="visit-cancel-info">Kontrola dysplazji — Burek · 04.05.2026, 14:00</p>
+    </div>
+    <div class="mb-5">
+      <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-2">Powód (opcjonalnie)</p>
+      <textarea rows="2" placeholder="np. zwierzak czuje się dobrze" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 resize-none text-sm"></textarea>
+    </div>
+    <div class="flex gap-2">
+      <button onclick="closeModal('visit-cancel-modal')" class="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold">Cofnij</button>
+      <button onclick="closeModal('visit-cancel-modal'); showToast('Wizyta odwołana');" class="flex-1 bg-rose-500 hover:bg-rose-600 text-white py-2.5 rounded-xl font-bold">Tak, odwołaj</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
 <!-- MODAL: OCR UPLOAD                                            -->
 <!-- ============================================================ -->
 <div id="ocr-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
@@ -1751,8 +2581,131 @@
     if (!dd.contains(e.target) && !e.target.closest('[onclick*="toggleNotif"]')) closeNotif();
   });
 
-  document.addEventListener('DOMContentLoaded', () => setTab('dashboard'));
+  // === MULTI-PET ===
+  let activePet = 'burek';
+  function setActivePet(name) {
+    activePet = name;
+    document.querySelectorAll('[data-pet-card]').forEach(el => {
+      el.classList.toggle('hidden', el.dataset.petCard !== name);
+    });
+    document.querySelectorAll('[data-pet-chip]').forEach(el => {
+      el.classList.toggle('chip-active', el.dataset.petChip === name);
+    });
+    showView('card');
+  }
+
+  // === GENERIC MODAL ===
+  function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+  function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+  // === VACCINATION INFO ===
+  const VACCINE_INFO = {
+    'wscieklizna-burek': { vaccine: 'Wścieklizna', date: '10.04.2026', next: '10.04.2027', clinic: 'Vetlab Warszawa', vet: 'dr Tomasz Nowak', addr: 'ul. Wiejska 12, 00-001 Warszawa', phone: '+48 22 555 11 22', cert: 'PL-2026-04-10-RB-0042' },
+    'dhppi-burek': { vaccine: 'DHPPi + L4', date: '10.04.2026', next: '10.04.2027', clinic: 'Vetlab Warszawa', vet: 'dr Tomasz Nowak', addr: 'ul. Wiejska 12, 00-001 Warszawa', phone: '+48 22 555 11 22', cert: 'PL-2026-04-10-DH-0043' },
+    'odrobaczanie-burek': { vaccine: 'Odrobaczanie (Drontal Plus)', date: '15.03.2026', next: '15.06.2026', clinic: 'Vetlab Warszawa', vet: 'dr Tomasz Nowak', addr: 'ul. Wiejska 12, 00-001 Warszawa', phone: '+48 22 555 11 22', cert: 'profilaktyka' },
+    'pchly-burek': { vaccine: 'Pchły / kleszcze (Frontline Combo)', date: '01.04.2026', next: '01.05.2026', clinic: 'Domowa aplikacja', vet: '—', addr: 'ul. Marszałkowska 15/22', phone: '—', cert: 'profilaktyka' },
+    'wscieklizna-mruczek': { vaccine: 'Wścieklizna', date: '12.05.2025', next: '12.05.2026', clinic: 'Vetlab Warszawa', vet: 'dr Tomasz Nowak', addr: 'ul. Wiejska 12, 00-001 Warszawa', phone: '+48 22 555 11 22', cert: 'PL-2025-05-12-RB-0019' },
+    'tricat-mruczek': { vaccine: 'Tricat', date: '12.05.2025', next: '12.05.2026', clinic: 'Vetlab Warszawa', vet: 'dr Tomasz Nowak', addr: 'ul. Wiejska 12, 00-001 Warszawa', phone: '+48 22 555 11 22', cert: 'PL-2025-05-12-TC-0020' },
+    'odrobaczanie-mruczek': { vaccine: 'Odrobaczanie', date: '15.03.2026', next: '15.06.2026', clinic: 'Vetlab Warszawa', vet: 'dr Tomasz Nowak', addr: 'ul. Wiejska 12, 00-001 Warszawa', phone: '+48 22 555 11 22', cert: 'profilaktyka' },
+    'pchly-mruczek': { vaccine: 'Pchły / kleszcze', date: '01.04.2026', next: '01.05.2026', clinic: 'Domowa aplikacja', vet: '—', addr: 'ul. Marszałkowska 15/22', phone: '—', cert: 'profilaktyka' },
+    'polyoma-paczek': { vaccine: 'Polyomavirus papug', date: '01.07.2024', next: '01.07.2025 (zaległe!)', clinic: 'VetExotic Warszawa', vet: 'dr Iwona Adamska', addr: 'al. Niepodległości 88, 02-585 Warszawa', phone: '+48 22 555 22 33', cert: 'PL-2024-07-01-PV-0011' },
+    'profilaktyka-paczek': { vaccine: 'Profilaktyka pasożytnicza', date: '15.01.2026', next: '15.07.2026', clinic: 'VetExotic Warszawa', vet: 'dr Iwona Adamska', addr: 'al. Niepodległości 88, 02-585 Warszawa', phone: '+48 22 555 22 33', cert: 'profilaktyka' },
+  };
+  function showVaccine(key) {
+    const v = VACCINE_INFO[key];
+    if (!v) return;
+    const el = document.getElementById('vaccine-modal-content');
+    el.innerHTML = `
+      <div class="flex items-start gap-3 mb-4">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-emerald-600"><path d="m18 2 4 4"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/></svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Szczepienie / profilaktyka</p>
+          <h3 class="font-display font-bold text-xl text-slate-800">${v.vaccine}</h3>
+        </div>
+      </div>
+      <div class="space-y-3 bg-slate-50 rounded-xl p-4">
+        <div class="grid grid-cols-2 gap-3 text-sm">
+          <div><p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Data podania</p><p class="font-semibold text-slate-800">${v.date}</p></div>
+          <div><p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Następne</p><p class="font-semibold text-slate-800">${v.next}</p></div>
+        </div>
+        <div class="border-t border-slate-200 pt-3"><p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Lecznica</p><p class="font-semibold text-slate-800">${v.clinic}</p></div>
+        <div><p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Lekarz</p><p class="font-semibold text-slate-800">${v.vet}</p></div>
+        <div><p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Adres</p><p class="font-medium text-slate-700 text-sm">${v.addr}</p></div>
+        <div class="grid grid-cols-2 gap-3"><div><p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Telefon</p><p class="font-medium text-slate-700 text-sm">${v.phone}</p></div><div><p class="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Nr certyfikatu</p><p class="font-mono text-xs text-slate-700">${v.cert}</p></div></div>
+      </div>
+      <div class="flex gap-2 mt-5">
+        <a href="tel:${v.phone.replace(/\\s/g,'')}" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-sm font-bold py-2.5 rounded-xl shadow shadow-emerald-200 hover:shadow-md transition"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Zadzwoń</a>
+        <button onclick="closeModal('vaccine-modal')" class="px-4 py-2.5 text-sm font-bold text-slate-600 hover:bg-slate-100 rounded-xl transition">Zamknij</button>
+      </div>`;
+    openModal('vaccine-modal');
+  }
+
+  // === VISIT SWITCH (history toggle) ===
+  function setVisitTab(name) {
+    document.querySelectorAll('[data-visit-tab]').forEach(b => b.classList.toggle('vt-active', b.dataset.visitTab === name));
+    document.querySelectorAll('[data-visit-list]').forEach(b => b.classList.toggle('hidden', b.dataset.visitList !== name));
+  }
+
+  // === PREMIUM ===
+  let PREMIUM = false;
+  function activatePremium() {
+    PREMIUM = true;
+    document.querySelectorAll('[data-premium-state]').forEach(el => {
+      el.dataset.premiumState = 'active';
+    });
+    const card = document.getElementById('premium-sidebar-card');
+    if (card) card.innerHTML = `
+      <div class="flex items-center gap-2 mb-2">
+        <div class="w-8 h-8 rounded-lg bg-emerald-200/70 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" class="text-emerald-700"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <p class="font-bold text-emerald-900 text-sm">Premium aktywny</p>
+      </div>
+      <p class="text-xs text-emerald-800/80 mb-1 leading-snug">Plan: <strong>Premium</strong> · €3,99/mc</p>
+      <p class="text-[11px] text-emerald-700/70">Aktywny do 27.04.2027</p>`;
+    closeModal('premium-modal');
+    showToast('Premium aktywowany ✓');
+  }
+
+  // === NFC tab ===
+  function setNfcTab(name) {
+    document.querySelectorAll('[data-nfc-tab]').forEach(b => b.classList.toggle('nfc-tab-active', b.dataset.nfcTab === name));
+    document.querySelectorAll('[data-nfc-content]').forEach(b => b.classList.toggle('hidden', b.dataset.nfcContent !== name));
+  }
+
+  // === PDF generation (mock) ===
+  function generatePdf() {
+    const pet = document.querySelector('input[name="pdf-pet"]:checked')?.value || 'burek';
+    const lang = document.querySelector('input[name="pdf-lang"]:checked')?.value || 'pl';
+    const name = { burek: 'Burek', mruczek: 'Mruczek', paczek: 'Pączek' }[pet];
+    closeModal('pdf-modal');
+    showToast(`PDF wygenerowany: Vetlink_karta_${name}_${lang.toUpperCase()}.pdf ✓`);
+  }
+
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl z-[100] text-sm font-medium';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2500);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => { setTab('dashboard'); setActivePet('burek'); });
 </script>
+
+<style>
+  /* Pet chip active state */
+  .pet-chip.chip-active[data-pet-chip="burek"] { background: linear-gradient(to right, rgb(245 158 11), rgb(249 115 22)); color: white; border-color: transparent; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3); }
+  .pet-chip.chip-active[data-pet-chip="mruczek"] { background: linear-gradient(to right, rgb(139 92 246), rgb(99 102 241)); color: white; border-color: transparent; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
+  .pet-chip.chip-active[data-pet-chip="paczek"] { background: linear-gradient(to right, rgb(16 185 129), rgb(20 184 166)); color: white; border-color: transparent; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); }
+  /* Visit tab active */
+  .vt-active { background: rgb(249 115 22); color: white; box-shadow: 0 4px 6px rgba(249, 115, 22, 0.2); border-color: transparent; }
+  /* NFC tab active */
+  .nfc-tab { color: rgb(100 116 139); }
+  .nfc-tab.nfc-tab-active { background: white; color: rgb(15 23 42); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+</style>
 
 <style>
   @keyframes fadeInDrop { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
