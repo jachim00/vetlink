@@ -1038,6 +1038,11 @@
             <button onclick="showView('card')" class="md:hidden p-2 hover:bg-slate-100 rounded-lg" title="Wróć do karty">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
+            <!-- Lang toggle -->
+            <div class="flex items-center bg-slate-100 rounded-full p-0.5 gap-0.5">
+              <button onclick="setLang('pl')" data-lang-btn="pl" class="lang-btn lang-active px-2.5 py-1 rounded-full text-[11px] font-bold transition" aria-label="Polski">🇵🇱</button>
+              <button onclick="setLang('en')" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition" aria-label="English">🇬🇧</button>
+            </div>
             <div class="relative">
               <button onclick="toggleNotif(event)" class="relative p-2 hover:bg-slate-100 rounded-lg" aria-label="Powiadomienia">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
