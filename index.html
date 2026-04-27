@@ -50,6 +50,12 @@
 </style>
 </head>
 <body class="paw-bg">
+<!-- Mobile-only fixed lang toggle (always top-right) -->
+<div class="lg:hidden fixed top-3 right-3 z-[60] flex items-center bg-white/95 backdrop-blur-md rounded-full ring-1 ring-slate-200 shadow-lg p-0.5 gap-0.5">
+  <button onclick="setLang('pl')" data-lang-btn="pl" class="lang-btn lang-active px-2.5 py-1 rounded-full text-[11px] font-bold transition" aria-label="Polski">🇵🇱</button>
+  <button onclick="setLang('en')" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition" aria-label="English">🇬🇧</button>
+</div>
+
 <div id="root">
 
   <!-- ============================================================ -->
@@ -92,7 +98,7 @@
       <!-- /LOST MODE banner -->
 
       <!-- Pet switcher + lang toggle -->
-      <div class="lost-mode-hide flex items-center justify-between gap-2 mb-4">
+      <div class="lost-mode-hide flex items-center justify-between gap-2 mb-4 pr-16 lg:pr-0">
         <div class="flex items-center gap-2 overflow-x-auto pb-1 flex-1 min-w-0">
         <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mr-1 shrink-0 hidden sm:block" data-i18n>Twoje pupile:</p>
         <button data-pet-chip="burek" onclick="setActivePet('burek')" class="pet-chip shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-orange-300 hover:shadow transition text-sm font-semibold">
@@ -105,7 +111,7 @@
           <span class="text-base">🦜</span>Pączek
         </button>
         </div>
-        <div class="shrink-0 flex items-center bg-white rounded-full ring-1 ring-slate-200 shadow-sm p-1 gap-0.5">
+        <div class="hidden lg:flex shrink-0 items-center bg-white rounded-full ring-1 ring-slate-200 shadow-sm p-1 gap-0.5">
           <button onclick="setLang('pl')" data-lang-btn="pl" class="lang-btn lang-active px-2.5 py-1 rounded-full text-[11px] font-bold transition">🇵🇱</button>
           <button onclick="setLang('en')" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition">🇬🇧</button>
         </div>
@@ -1038,8 +1044,8 @@
             <button onclick="showView('card')" class="md:hidden p-2 hover:bg-slate-100 rounded-lg" title="Wróć do karty">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
-            <!-- Lang toggle -->
-            <div class="flex items-center bg-slate-100 rounded-full p-0.5 gap-0.5">
+            <!-- Lang toggle (desktop only) -->
+            <div class="hidden lg:flex items-center bg-slate-100 rounded-full p-0.5 gap-0.5">
               <button onclick="setLang('pl')" data-lang-btn="pl" class="lang-btn lang-active px-2.5 py-1 rounded-full text-[11px] font-bold transition" aria-label="Polski">🇵🇱</button>
               <button onclick="setLang('en')" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-full text-[11px] font-bold transition" aria-label="English">🇬🇧</button>
             </div>
@@ -1195,7 +1201,7 @@
         </aside>
 
         <!-- Main -->
-        <main class="flex-1 px-4 sm:px-6 py-5 lg:py-7 pb-24 lg:pb-7 space-y-6 min-w-0">
+        <main class="flex-1 px-4 sm:px-6 py-5 lg:py-7 pb-32 lg:pb-7 space-y-6 min-w-0">
 
           <!-- ===== TAB: DASHBOARD ===== -->
           <section data-panel="dashboard" class="space-y-6">
@@ -2035,7 +2041,7 @@
       </div>
 
       <!-- Mobile bottom nav -->
-      <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-40 shadow-2xl">
+      <nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-40 shadow-2xl pb-[env(safe-area-inset-bottom)]">
         <div class="grid grid-cols-5">
           <button data-tab="dashboard" onclick="setTab('dashboard')" class="mtab-btn flex flex-col items-center gap-1 py-2.5 transition">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
